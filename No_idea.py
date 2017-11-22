@@ -1,0 +1,1 @@
+(n,m)=map(int, raw_input().split())i=map(int, raw_input().split())assert len(i)==na=set(map(int, raw_input().split()))assert len(a)==mb=set(map(int, raw_input().split()))assert len(b)==mhappy_ness=0for x in i:    if x in a:        happy_ness +=1    if x in b:        happy_ness -=1print happy_ness
