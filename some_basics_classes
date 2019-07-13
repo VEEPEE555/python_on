@@ -1,0 +1,51 @@
+import datetime 
+class User:
+    def __init__(self,full_name,bd):
+        self.name=full_name
+        self.birthday=bd # 'yyyymmdd'
+    def age(self):
+        today = datetime.datetime(2019,7,12)
+        by=int(self.birthday[0:4])
+        bm=int(self.birthday[4:6])
+        bda=int(self.birthday[6:8])
+        dobasdate=datetime.datetime(by,bm,bda)
+        age_in_days = (today - dobasdate).days
+        self.age_in_years=int(age_in_days/365)
+        return self.age_in_years
+        
+        
+user1 = User('frank papa','19780707')
+user1.age()
+print (user1.age_in_years)
+
+
+------------------------------------------------------------------
+
+class Word_Parser:
+    """docstring for Word_Parser"""
+    def __init__(self, sentences):
+        self.sentences = sentences
+
+    def parser(self):
+        self.word_list = self.sentences.split()
+        word_list = []
+        word_list = self.word_list
+        return word_list
+
+    def sort_word_list(self):
+        self.sorted_word_list = sorted(self.sentences.split())
+        sorted_word_list = self.sorted_word_list
+        return sorted_word_list
+
+    def get_num_words(self):
+        self.num_words = len(self.word_list)
+        num_words = self.num_words
+        return num_words
+
+test = Word_Parser("mary had a little lamb")
+test.parser()
+test.sort_word_list()
+test.get_num_words()
+print test.word_list
+print test.sorted_word_list
+print test.num_words
